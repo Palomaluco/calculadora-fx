@@ -1,0 +1,72 @@
+/* Contenedor principal */
+.calculadora-container {
+    -fx-background-color: #1e1e1e;
+    -fx-pref-width: 300px;
+}
+
+/* Pantalla de resultados */
+.pantalla {
+    -fx-background-color: #2d2d2d;
+    -fx-text-fill: #ffffff;
+    -fx-font-family: "Segoe UI", sans-serif;
+    -fx-font-size: 28px;
+    -fx-alignment: CENTER-RIGHT;
+    -fx-background-radius: 8px;
+    -fx-padding: 10px;
+    -fx-border-color: transparent;
+}
+
+/* Base para TODOS los botones */
+.btn-num {
+    -fx-background-color: #3c3c3c;
+    -fx-text-fill: #ffffff;
+    -fx-font-family: "Segoe UI", sans-serif;
+    -fx-font-size: 18px;
+    -fx-font-weight: bold;
+    -fx-pref-width: 55px;
+    -fx-pref-height: 55px;
+    -fx-background-radius: 50%; /* Hace los botones totalmente redondos */
+    -fx-cursor: hand;
+}
+
+.btn-num:hover {
+    -fx-background-color: #4a4a4a;
+}
+
+/* Botones de operadores (+, -, ×, ÷) */
+.btn-op {
+    -fx-background-color: #f39c12;
+    -fx-text-fill: #ffffff;
+}
+
+.btn-op:hover {
+    -fx-background-color: #e67e22;
+}
+
+/* Botón de limpiar (C) */
+.btn-clear {
+    -fx-background-color: #e74c3c;
+    -fx-text-fill: #ffffff;
+}
+
+.btn-clear:hover {
+    -fx-background-color: #c0392b;
+}
+
+/* Botón de igual (=) */
+.btn-igual {
+    -fx-background-color: #2ecc71;
+    -fx-text-fill: #ffffff;
+}
+
+.btn-igual:hover {
+    -fx-background-color: #27ae60;
+}
+
+/* Botón especial del número 0 (alargado) */
+.btn-cero {
+    -fx-pref-width: 120px;
+    -fx-background-radius: 28px; /* Redondeado tipo cápsula */
+    -fx-alignment: CENTER-LEFT;
+    -fx-padding: 0 0 0 20px;
+}
