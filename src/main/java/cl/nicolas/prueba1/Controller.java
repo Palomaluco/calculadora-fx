@@ -6,6 +6,7 @@ import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 
 public class Controller {
+
     @FXML
     private TextField txtPantalla;
     private double num1 = 0;
@@ -35,7 +36,6 @@ public class Controller {
 
     }
 
-
     //2 . Maneja los operadores (+ , - , X , % , / )
     @FXML
     private void procesarOperador(ActionEvent event){
@@ -45,25 +45,27 @@ public class Controller {
         inicioNuevoNumero = true;
     }
 
-    //3. Maneja acciones especiales: C, += , +/-
     @FXML
     private void procesarAccion(ActionEvent event){
         Button btn = (Button) event.getSource();
         String accion = btn.getText();
 
         switch (accion){
-            case "=" -> calcularResultado();
-            case "C" -> {
+            case "=":
+                calcularResultado();
+                break;
+            case "C":
                 num1 = 0;
                 operador = "";
                 txtPantalla.setText("0");
                 inicioNuevoNumero = true;
-            }
-            case "+/-" -> {
+                break;
+            case "+/-":
                 double actual = Double.parseDouble(txtPantalla.getText());
                 actual *= -1;
                 formatearResultado(actual);
-            }
+                break;
+
         }
     }
 
@@ -86,15 +88,16 @@ public class Controller {
                 }
                 resultado = num1 / num2;
             }
-            case "%" -> resultado = num1 * (num2 / 100.0);
+            case "%" -> resultado = num1 * ( num2 / 100.0 );
         }
 
         formatearResultado(resultado);
         operador = "";
         inicioNuevoNumero = true;
+
     }
 
-    //Oculta el decimal .0 si el numero es entero (ej: 5.0 -> 5)
+
     private void formatearResultado(double valor){
         if(valor == (long) valor){
             txtPantalla.setText(String.format("%d",(long) valor));
@@ -102,4 +105,5 @@ public class Controller {
             txtPantalla.setText(String.valueOf(valor));
         }
     }
+
 }
